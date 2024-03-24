@@ -8,9 +8,12 @@ router.get('/', (req, res) => {
 
 router.post('/csp-reports', (req, res) => {
 	console.log(`Report received from '${req.hostname}'`);
-	const report = req.body;
-	console.log({report});
-    res.json({report: report});
+	const data = {
+        blocked: req.body['csp-report']['blocked-uri'],
+        violatedDirective: req.body['csp-report']['violated-directive']
+    }
+    console.log({data});
+    res.json(data);
 })
 
 module.exports = router;
