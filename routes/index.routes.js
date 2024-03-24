@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/csp-reports', (req, res) => {
-	console.log(`Report received from '${req.originalUrl}'`);
+	console.log(`Report received from '${req.headers.origin}'`);
 	const data = {
         blocked: req.body['csp-report']['blocked-uri'],
         violatedDirective: req.body['csp-report']['violated-directive']
