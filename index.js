@@ -11,7 +11,8 @@ app.get('/', (req, res) => {
 	res.json({message: 'you got it'});
 })
 
-app.post('/csp-reporting', (req, res) => {
+app.post('/csp-reports', (req, res) => {
+	console.log(`Report received from '${req.hostname}'`);
 	const report = req.body;
 	console.log({report});
 })
