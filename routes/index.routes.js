@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-	console.log(`Request received from '${req.hostname}'`);
+	console.log(`Request received from '${req.headers.origin}'`);
 	res.json({message: 'you got it'});
 })
 
